@@ -15,10 +15,6 @@ module KnowsTheDomain
 end
 World(KnowsTheDomain)
 
-CAPTURE_CASH_AMOUNT  = Transform /^\$(\d+)$/ do |digits| 
-  digits.to_i
-end
-
 Given(/^I have deposited (#{CAPTURE_CASH_AMOUNT }) in my account$/) do |amount|
   my_account = Account.new
   my_account.deposit(amount)
